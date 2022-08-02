@@ -1,0 +1,29 @@
+.list {
+    list-style: none;
+    margin-left: 25%;
+}
+.item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.link {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+.title {
+    margin-left: 25%;
+    font-size: 30px;
+  }
+  .label {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    width: 200px;
+    margin-top: 10px;
+}
+.deleteBtn {
+    margin-left: 10px;
+}
