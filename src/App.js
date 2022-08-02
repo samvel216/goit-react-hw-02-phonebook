@@ -36,7 +36,7 @@ export class App extends Component {
     if (i === 0){
       const formDispatch = {name: nameValue, number: numberValue, id: nanoid()};
 
-      this.setState(prevState => ({
+   return this.setState(prevState => ({
         contacts: [formDispatch, ...prevState.contacts]
       }));
     }
@@ -59,8 +59,8 @@ export class App extends Component {
         index = this.state.contacts.indexOf(element)
       }
     })
-    massive.splice(index, 1);
-    this.setState({
+      massive.splice(index, 1);
+      return  this.setState({
       contacts: [...massive]
     })
   }
