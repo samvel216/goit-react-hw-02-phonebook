@@ -6,7 +6,7 @@ const Contacts = ({massive, deleteButton}) => (
 {massive.map(element => (
     <li className={styles.item} key ={element.id} id= {element.id}>
         <p>{element.name}: </p>
-        <a href=""  className={styles.link}>{element.number}</a> 
+        <button className={styles.link}>{element.number}</button>
         <button id= {element.id} className={styles.deleteBtn} onClick={deleteButton}>Delete</button>
     </li>
 ))}
