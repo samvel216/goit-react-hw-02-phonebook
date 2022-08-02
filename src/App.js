@@ -27,7 +27,7 @@ export class App extends Component {
     const nameValue = form.elements.name.value;
     const numberValue = form.elements.number.value;
     const massive = this.state.contacts;
-    massive.map(element => {
+    massive.forEach(element => {
       if (element.name === nameValue) {
         alert(`${nameValue} is already in contacts`);
         i = 1;
@@ -54,7 +54,7 @@ export class App extends Component {
     event.preventDefault();
     let index;
     const massive = this.state.contacts;
-    massive.map(element => {
+    massive.forEach(element => {
       if (element.id === event.currentTarget.id) {
         index = this.state.contacts.indexOf(element)
       }
