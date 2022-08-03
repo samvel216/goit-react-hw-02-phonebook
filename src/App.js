@@ -4,7 +4,7 @@ import Phonebook from './components/phonebook/phonebook';
 import Contacts from './components/contacts/contacts';
 import Filter from './components/Filter/filter';
 import styles from './components/contacts/Contacts.module.css';
-
+import ContactsItem from './components/contactsItem/contactsItem';
 export class App extends Component {
   state = {
     contacts: [{name: 'Rosie Simpson',
@@ -27,12 +27,11 @@ export class App extends Component {
     const nameValue = form.elements.name.value;
     const numberValue = form.elements.number.value;
     const massive = this.state.contacts;
-    massive.forEach(element => {
-      if (element.name === nameValue) {
-        alert(`${nameValue} is already in contacts`);
-        i = 1;
-      }
-    })
+    const repeteName = massive.find(element => element.name === nameValue)
+    if (repeteName !== undefined) {
+         alert(`${nameValue} is already in contacts`);
+         i = 1;
+    }
     if (i === 0){
       const formDispatch = {name: nameValue, number: numberValue, id: nanoid()};
 
@@ -52,17 +51,12 @@ export class App extends Component {
   }
   deleteButton = (event) => {
     event.preventDefault();
-    let index;
-    const massive = this.state.contacts;
-    massive.forEach(element => {
-      if (element.id === event.currentTarget.id) {
-        index = this.state.contacts.indexOf(element)
-      }
-    })
-      massive.splice(index, 1);
-      return  this.setState({
-      contacts: [...massive]
-    })
+   const array = this.state.contacts;
+   const index = array.findIndex(element => element.id === event.currentTarget.id);
+   array.splice(index, 1);
+       return  this.setState({
+       contacts: [...array]
+     })
   }
   render() { 
     const filteredEl = this.contactsFilter();
@@ -72,7 +66,7 @@ export class App extends Component {
     <Phonebook handleSubmit = {this.handleSubmit}/>
     <h3 className={styles.title}>Contacts</h3>
     <Filter inputUpdate = {this.inputUpdate}/>
-    <Contacts massive = {filteredEl} deleteButton = {this.deleteButton}/>
+    <Contacts massive = {filteredEl} deleteButton = {this.deleteButton} ContactsItem = {ContactsItem}/>
     </div>  
     )
   }

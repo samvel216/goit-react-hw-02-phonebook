@@ -1,14 +1,13 @@
+import React from "react";
 import styles from './Contacts.module.css';
 import PropTypes from 'prop-types';
 
-const Contacts = ({massive, deleteButton}) => (
+const Contacts = ({massive, deleteButton,ContactsItem}) => (
 <ul className={styles.list}>
 {massive.map(element => (
-    <li className={styles.item} key ={element.id} id= {element.id}>
-        <p>{element.name}: </p>
-        <button className={styles.link}>{element.number}</button>
-        <button id= {element.id} className={styles.deleteBtn} onClick={deleteButton}>Delete</button>
-    </li>
+    <React.Fragment key= {element.id}>
+     <ContactsItem element = {element} deleteButton = {deleteButton}/>
+     </React.Fragment>
 ))}
 </ul>
 )
