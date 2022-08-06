@@ -7,7 +7,6 @@
   align-items: flex-start;
   flex-direction: column;
 }
-
 .input {
   width: 80%;
   margin-bottom: 10px;
@@ -15,11 +14,6 @@
   border-radius: 3px;
   border: 1.5px solid rgba(50, 49, 49, 0.442);
 }
-
-.input:focus {
-  border-color: teal;
-}
-
 .btn {
   width: 120px;
   height: 30px;
