@@ -1,18 +1,21 @@
-import styles from './Filter.module.css';
 import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid'
-const formId = nanoid(5);
-const Filter = ({inputUpdate}) => ( 
-    <form action={formId} className={styles.form}>
-    <label htmlFor={formId}  className= {styles.label}>
-    Find contacts by name
-    <input type="text"
-    onChange={inputUpdate}
-    className= {styles.input} />
+import styles from './Filter.module.css';
+
+export function Filter({ value, onChange }) {
+  return (
+    <label className={styles.label}>
+      Find contacts by name
+      <input
+        className={styles.input}
+        type="text"
+        value={value}
+        onChange={onChange}
+      />
     </label>
-</form>
-)
+  );
+}
+
 Filter.propTypes = {
-    inputUpdate: PropTypes.func
-  }
-export default Filter;
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
