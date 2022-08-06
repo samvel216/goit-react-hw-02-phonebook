@@ -2,8 +2,5 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src", "src/App.js", "contacts"],
-  "resolve": {
-    "extensions": [".js", ".ts"]
-  }
+  "include": ["src"]
 }
