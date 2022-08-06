@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactsForm/ContactForm';
-import { Filter } from './Filter/Filter';
+import { Filter } from './Filt/Filter';
 import { ContactList } from './ContactList/ContactList';
 
 export class App extends Component {
