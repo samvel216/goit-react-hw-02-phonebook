@@ -15,7 +15,7 @@ export function Filter({ value, onChange }) {
   );
 }
 
-Filter.propTypes = {
+Filter.PropTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
 };
